@@ -21,11 +21,11 @@ const rappers = {
         'birthName': 'unknown',
         'birthLocation': 'unknown'
     }
-}
+};
 
 app.get('/', (request, response) => {
     response.sendFile(__dirname + '/index.html');
-})
+});
 
 app.get('/api/:name', (request, response) => {
     const rapperName = request.params.name.toLowerCase();
@@ -34,6 +34,7 @@ app.get('/api/:name', (request, response) => {
     } else {
         response.json(rappers['unknown']);
     }
+});
 
 app.listen(PORT, function() {
     console.log(`listening on port ${PORT}`);
