@@ -36,6 +36,6 @@ app.get('/api/:name', (request, response) => {
     }
 });
 
-app.listen(PORT, function() {
+app.listen(process.env.PORT || PORT, function() {
     console.log(`listening on port ${PORT}`);
 });
